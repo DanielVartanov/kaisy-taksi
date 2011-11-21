@@ -1,7 +1,8 @@
 require "sinatra"
-require "haml"
+require "slim"
 
 set :public_folder, File.dirname(__FILE__) + '/public'
+Slim::Engine.set_default_options :pretty => true
 
 def price(distance)
   distance < 2 ?
@@ -10,7 +11,7 @@ def price(distance)
 end
 
 get '/' do
-  haml :index
+  slim :index
 end
 
 get '/:distance' do
