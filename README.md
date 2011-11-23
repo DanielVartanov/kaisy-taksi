@@ -2,8 +2,7 @@
 =========
 
 Installation
-------------
+---------
 
-Install 'shotgun' gem, then
-
-    ruby application.rb
+    bundle install
+    bin/shotgun application.rb
