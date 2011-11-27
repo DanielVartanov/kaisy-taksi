@@ -27,7 +27,7 @@ class Vertex < ActiveRecord::Base
 
   def as_json(options)
     options ||= {}
-    super options.merge :except => [:id, :zone_id]
+    super options.merge :except => [:zone_id]
   end
 end
 
@@ -40,17 +40,19 @@ get '/markup-zones' do
   slim :markup_zones
 end
 
-put '/zones/1' do
-  vertices = JSON.parse(request.body.read)
-  vertices.map! { |vertex| { :lat => vertex["Pa"], :lng => vertex["Qa"] } }
-  
-  zone = Zone.find_by_name("1")
-  zone.vertices.destroy_all
-  vertices.each do |vertex|
-    zone.vertices.create! vertex
-  end
-  
+put '/zones/:name/:vertex_id' do
+  new_position = JSON.parse(request.body.read)
+  new_position = { :lat => new_position["Pa"], :lng => new_position["Qa"] }
+
+  vertex = Vertex.find(params[:vertex_id])
+  vertex.update_attributes :lat => new_position[:lat],
+                           :lng => new_position[:lng]
   ""
+end
+
+get '/zones/:name' do
+  content_type :json
+  Zone.find_by_name(params[:name]).vertices.to_json
 end
 
 get '/:distance' do
