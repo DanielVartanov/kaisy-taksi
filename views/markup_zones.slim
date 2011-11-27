@@ -1,0 +1,7 @@
+script type="text/javascript" src="markup_zones.js"
+
+javascript:
+  function initialize() {
+    var vertices = #{@zone.vertices.to_json};
+    startMarkingUp(initializeMap(), vertices);
+  }

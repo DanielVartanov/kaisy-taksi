@@ -1,10 +1,6 @@
 var map;
-var route = new Array();
 
-var directionsService;
-var directionsDisplay;
-
-function initialize() {
+function initializeMap() {
   var latlng = new google.maps.LatLng(42.830022, 74.587883);
   var myOptions = {
     zoom: 13,
@@ -12,49 +8,32 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-  directionsService = new google.maps.DirectionsService();
-  directionsDisplay = new google.maps.DirectionsRenderer();
-  directionsDisplay.setMap(map);
-
-  google.maps.event.addListener(map, 'click', function(event) {
-    point = event.latLng
-    route.push(point);
-    placeMarker(point);
-    
-    if (route.length >= 2) {
-      drawRoute();
-    }
-  });
-}
-
-function drawRoute() {
-  var request = {
-    origin: route[0], 
-    destination: route[1],
-    travelMode: google.maps.DirectionsTravelMode.DRIVING
-  };
-  
-  directionsService.route(request, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      var leg = response.routes[0].legs[0];
-      directionsDisplay.setDirections(response);
-      calculateRouteCost(leg.distance.value);
-    }
-  });
+  return map;
 }
 
 function placeMarker(location) {
-  var marker = new google.maps.Marker({
-    position: location, 
+  return new google.maps.Marker({
+    position: location,
+    draggable: true,
     map: map
   });
 }
 
-function calculateRouteCost(distance) {
-  var request = new XMLHttpRequest();
-  request.open("GET", distance / 1000, false);
-  request.send(null);
-  alert(request.responseText);
-  return distance;
+var polygon = null;
+
+function drawPolygon(vertices) {
+  if (polygon) {
+    polygon.setMap(null);
+  }
+  
+  polygon = new google.maps.Polygon({
+    paths: vertices,
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.2
+  });
+
+  polygon.setMap(map);
 }
