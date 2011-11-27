@@ -1,27 +1,34 @@
 function refreshZone(map, zoneName) {
-  updateMarkerFunction = function(vertexId, newPosition) {
-    pushToServer(zoneName, vertexId, newPosition);
-    refreshZone(map, zoneName);
-  };
+  latlngs = pullFromServer(zoneName);
+  markers = createMarkers(latlngs);
   
-  addMarkerFunction = function(vertexId, latlng) {
-    marker = placeMarker(latlng);
-
-    google.maps.event.addListener(marker, 'dragend', function(event) {
-      marker.setMap(null);
-      updateMarkerFunction(vertexId, event.latLng);
-    });
-    
-    return marker;
-  }
-  
-  vertices = pullFromServer(zoneName);
-  
-  markers = vertices.map(function(vertex) {
-    return addMarkerFunction(vertex["id"], vertex["latlng"]);
-  });
+  updateMarkerFunction = generateUpdateMarkerFunction(zoneName, markers);
+  setMarkersEvents(markers, updateMarkerFunction);
   
   drawZone(markers);
+}
+
+function generateUpdateMarkerFunction(zoneName, markers) {
+  return function(vertexId, newPosition) {
+    pushToServer(zoneName, vertexId, newPosition);
+    drawZone(markers);
+  };
+}
+
+function createMarkers(latlngs) {
+  return latlngs.map(function(latlng) {
+    marker = placeMarker(latlng);
+    marker.id = latlng.id;
+    return marker;
+  });
+}
+
+function setMarkersEvents(markers, updateMarkerFunction) {
+  markers.map(function(marker) {
+    google.maps.event.addListener(marker, 'dragend', function(event) {
+      updateMarkerFunction(marker.id, event.latLng);
+    });
+  });
 }
 
 function verticesFromMarkers(markers) {
@@ -43,10 +50,9 @@ function pullFromServer(zoneName) {
   vertices = JSON.parse(request.responseText);
 
   return vertices.map(function(vertex) {
-    return {
-      "id": vertex["id"],
-      "latlng": new google.maps.LatLng(vertex["lat"], vertex["lng"])
-    }
+    latlng = new google.maps.LatLng(vertex["lat"], vertex["lng"])
+    latlng.id = vertex["id"]
+    return latlng
   });
 }
 
