@@ -14,7 +14,7 @@ Slim::Engine.set_default_options :pretty => true
 Slim::Engine.default_options[:disable_escape] = true
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
-ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'zones.db', :pool => 5
+ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'zones.db', :pool => 25
 
 class Zone < ActiveRecord::Base
   has_many :vertices
@@ -36,8 +36,19 @@ get '/' do
 end
 
 get '/markup-zones' do
-  @zone = Zone.find_by_name("1")
+  @zone = Zone.find_by_name("7")
   slim :markup_zones
+end
+
+post '/zones/:name' do
+  position = JSON.parse(request.body.read)
+  position = { :lat => position["Pa"], :lng => position["Qa"] }
+
+  zone = Zone.find_by_name(params[:name])
+  params = position.merge :zone => zone
+  vertex = Vertex.create! params
+  content_type :json
+  vertex.to_json
 end
 
 put '/zones/:name/:vertex_id' do
@@ -47,6 +58,12 @@ put '/zones/:name/:vertex_id' do
   vertex = Vertex.find(params[:vertex_id])
   vertex.update_attributes :lat => new_position[:lat],
                            :lng => new_position[:lng]
+  ""
+end
+
+delete '/zones/:name/:vertex_id' do
+  vertex = Vertex.find(params[:vertex_id])
+  vertex.destroy
   ""
 end
 
