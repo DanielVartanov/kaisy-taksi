@@ -1,0 +1,37 @@
+doctype 5
+html
+  head
+    title Сервис «Кайсы такси?». Показывает лучшее такси для выбранного маршрута.
+    meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1" 
+    
+    link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css"
+    link rel="stylesheet" href="mobile.css"
+    script src="http://code.jquery.com/jquery-1.6.4.min.js"
+    script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"
+    script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"
+    script src="underscore.js"
+    script src="maplib.js"
+    script src="mobile.js"
+    
+  body
+    #main data-role='page' data-title='Кайсы такси' 
+      div data-role='header' data-position='inline'
+        a#remove_route data-role='button' data-icon='refresh' data-iconpos="notext"
+        h1 Кайсы такси
+        a#search href="#list" data-role='button' data-icon='search' Найти
+      #map
+
+    #list data-role='page' data-title='Результат поиска'
+      div data-role='header' data-position='inline'
+        a href="#main" data-role='button' data-icon='back' data-rel='back' Назад
+        h1 Результаты поиска
+      div data-role='content'
+        ul data-role='listview' data-inset='true'
+
+    #route_missing_warning data-role='dialog'
+      div data-role='header'
+        h1 Ошибка
+      div data-role='content'
+        | Укажите путь, кликнув на карту
