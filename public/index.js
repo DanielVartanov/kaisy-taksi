@@ -14,7 +14,7 @@ function initialize() {
     point = event.latLng
     route.push(point);
     placeMarker(point);
-    
+
     if (route.length >= 2) {
       drawRoute();
     }
@@ -23,11 +23,11 @@ function initialize() {
 
 function drawRoute() {
   var request = {
-    origin: route[0], 
+    origin: route[0],
     destination: route[1],
     travelMode: google.maps.DirectionsTravelMode.DRIVING
   };
-  
+
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       var leg = response.routes[0].legs[0];

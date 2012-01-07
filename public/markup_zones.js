@@ -1,10 +1,10 @@
 function refreshZone(map, zoneName) {
   latlngs = pullFromServer(zoneName);
   markers = createMarkers(latlngs);
-  
+
   updateMarkerFunction = generateUpdateMarkerFunction(zoneName, markers);
   setMarkersEvents(markers, updateMarkerFunction);
-  
+
   drawZone(markers);
 }
 
