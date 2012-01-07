@@ -25,7 +25,7 @@ function drawPolygon(vertices) {
   if (polygon) {
     polygon.setMap(null);
   }
-  
+
   polygon = new google.maps.Polygon({
     paths: vertices,
     strokeColor: "#FF0000",

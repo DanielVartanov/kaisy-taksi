@@ -35,6 +35,10 @@ get '/' do
   slim :index
 end
 
+get '/mobile' do
+  slim :mobile, :layout => false
+end
+
 get '/markup-zones' do
   @zone = Zone.find_by_name("7")
   slim :markup_zones
