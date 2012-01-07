@@ -39,43 +39,6 @@ get '/mobile' do
   slim :mobile, :layout => false
 end
 
-get '/markup-zones' do
-  @zone = Zone.find_by_name("7")
-  slim :markup_zones
-end
-
-post '/zones/:name' do
-  position = JSON.parse(request.body.read)
-  position = { :lat => position["Pa"], :lng => position["Qa"] }
-
-  zone = Zone.find_by_name(params[:name])
-  params = position.merge :zone => zone
-  vertex = Vertex.create! params
-  content_type :json
-  vertex.to_json
-end
-
-put '/zones/:name/:vertex_id' do
-  new_position = JSON.parse(request.body.read)
-  new_position = { :lat => new_position["Pa"], :lng => new_position["Qa"] }
-
-  vertex = Vertex.find(params[:vertex_id])
-  vertex.update_attributes :lat => new_position[:lat],
-                           :lng => new_position[:lng]
-  ""
-end
-
-delete '/zones/:name/:vertex_id' do
-  vertex = Vertex.find(params[:vertex_id])
-  vertex.destroy
-  ""
-end
-
-get '/zones/:name' do
-  content_type :json
-  Zone.find_by_name(params[:name]).vertices.to_json
-end
-
 get '/:distance' do
   distance = params[:distance].to_f
   prices(distance).to_json
