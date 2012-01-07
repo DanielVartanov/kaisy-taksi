@@ -4,6 +4,7 @@ gem "sinatra"
 gem "slim"
 gem "activerecord"
 gem "sqlite3"
+gem "ruby-geometry"
 
 group :development do
   gem "shotgun"
