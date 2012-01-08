@@ -16,6 +16,8 @@ Slim::Engine.default_options[:disable_escape] = true
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'zones.db', :pool => 25
 
+zones = Zone.all(:include => :vertices)
+
 get '/' do
   slim :index
 end
