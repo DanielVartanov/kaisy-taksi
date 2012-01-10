@@ -6,6 +6,7 @@ require "sqlite3"
 require "logger"
 require "awesome_print"
 require "pp"
+require "geometry"
 
 require_relative "kaisy_taxi"
 
@@ -24,6 +25,15 @@ end
 
 get '/mobile' do
   slim :mobile, :layout => false
+end
+
+get '/:lat,:lng' do
+  point = Geometry::Point.new(params[:lat].to_f, params[:lng].to_f)
+  
+  matching_zone = zones.find { |zone|
+    zone.to_polygon.contains?(point)
+  }
+  matching_zone.name
 end
 
 get '/:distance' do
