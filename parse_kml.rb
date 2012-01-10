@@ -28,8 +28,8 @@ placemarks.each do |placemark|
   points = placemark.xpath('.//coordinates').text.split(' ')
 
   zone = Zone.create! :name => zone_name
-  puts zone.inspect
-
+  points.shift # each placemark contains first(=last) point twice. Remove it.
+  
   points.each do |point|
     latlng = point.split(',')
     vertex = Vertex.create! :lat => latlng[1], :lng => latlng[0], :zone => zone
