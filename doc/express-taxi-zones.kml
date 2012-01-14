@@ -3,28 +3,6 @@
 <Document>
   <name>Express Taxi Zones</name>
   <description><![CDATA[]]></description>
-  <Style id="style9">
-    <LineStyle>
-      <color>BF0000CC</color>
-      <width>4</width>
-    </LineStyle>
-    <PolyStyle>
-      <color>330000CC</color>
-      <fill>1</fill>
-      <outline>1</outline>
-    </PolyStyle>
-  </Style>
-  <Style id="style22">
-    <LineStyle>
-      <color>BF0000CC</color>
-      <width>4</width>
-    </LineStyle>
-    <PolyStyle>
-      <color>330000CC</color>
-      <fill>1</fill>
-      <outline>1</outline>
-    </PolyStyle>
-  </Style>
   <Style id="style4">
     <LineStyle>
       <color>BFFF6633</color>
@@ -36,7 +14,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style12">
+  <Style id="style11">
     <LineStyle>
       <color>BFFF6633</color>
       <width>4</width>
@@ -58,29 +36,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style23">
-    <LineStyle>
-      <color>BFFF6633</color>
-      <width>4</width>
-    </LineStyle>
-    <PolyStyle>
-      <color>33FF6633</color>
-      <fill>1</fill>
-      <outline>1</outline>
-    </PolyStyle>
-  </Style>
-  <Style id="style14">
-    <LineStyle>
-      <color>BF0000CC</color>
-      <width>4</width>
-    </LineStyle>
-    <PolyStyle>
-      <color>330000CC</color>
-      <fill>1</fill>
-      <outline>1</outline>
-    </PolyStyle>
-  </Style>
-  <Style id="style20">
+  <Style id="style18">
     <LineStyle>
       <color>BFFF6633</color>
       <width>4</width>
@@ -93,16 +49,16 @@
   </Style>
   <Style id="style16">
     <LineStyle>
-      <color>BF0000CC</color>
+      <color>BFFF6633</color>
       <width>4</width>
     </LineStyle>
     <PolyStyle>
-      <color>330000CC</color>
+      <color>33FF6633</color>
       <fill>1</fill>
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style15">
+  <Style id="style13">
     <LineStyle>
       <color>BF0000CC</color>
       <width>4</width>
@@ -124,18 +80,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style10">
-    <LineStyle>
-      <color>BF0000CC</color>
-      <width>4</width>
-    </LineStyle>
-    <PolyStyle>
-      <color>330000CC</color>
-      <fill>1</fill>
-      <outline>1</outline>
-    </PolyStyle>
-  </Style>
-  <Style id="style17">
+  <Style id="style9">
     <LineStyle>
       <color>BF0000CC</color>
       <width>4</width>
@@ -168,7 +113,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style25">
+  <Style id="style20">
     <LineStyle>
       <color>BF0000CC</color>
       <width>4</width>
@@ -179,7 +124,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style21">
+  <Style id="style17">
     <LineStyle>
       <color>BF0000CC</color>
       <width>4</width>
@@ -190,7 +135,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style19">
+  <Style id="style15">
     <LineStyle>
       <color>BF0000CC</color>
       <width>4</width>
@@ -212,7 +157,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style11">
+  <Style id="style10">
     <LineStyle>
       <color>BFFF6633</color>
       <width>4</width>
@@ -223,7 +168,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style18">
+  <Style id="style14">
     <LineStyle>
       <color>BFFF6633</color>
       <width>4</width>
@@ -256,7 +201,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style24">
+  <Style id="style19">
     <LineStyle>
       <color>BFFF6633</color>
       <width>4</width>
@@ -267,7 +212,7 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Style id="style13">
+  <Style id="style12">
     <LineStyle>
       <color>BFFF6633</color>
       <width>4</width>
@@ -278,74 +223,6 @@
       <outline>1</outline>
     </PolyStyle>
   </Style>
-  <Placemark>
-    <name>7</name>
-    <description><![CDATA[]]></description>
-    <styleUrl>#style9</styleUrl>
-    <Polygon>
-      <outerBoundaryIs>
-        <LinearRing>
-          <tessellate>1</tessellate>
-          <coordinates>
-            74.587257,42.865177,0.000000
-            74.588028,42.873638,0.000000
-            74.588760,42.881405,0.000000
-            74.588974,42.883953,0.000000
-            74.596436,42.883636,0.000000
-            74.596825,42.888668,0.000000
-            74.597343,42.893257,0.000000
-            74.597687,42.896938,0.000000
-            74.604767,42.897408,0.000000
-            74.611504,42.896088,0.000000
-            74.611671,42.884800,0.000000
-            74.611717,42.875683,0.000000
-            74.610947,42.863541,0.000000
-            74.595795,42.863918,0.000000
-            74.587257,42.865177,0.000000
-          </coordinates>
-        </LinearRing>
-      </outerBoundaryIs>
-    </Polygon>
-  </Placemark>
-  <Placemark>
-    <name>9</name>
-    <description><![CDATA[]]></description>
-    <styleUrl>#style22</styleUrl>
-    <Polygon>
-      <outerBoundaryIs>
-        <LinearRing>
-          <tessellate>1</tessellate>
-          <coordinates>
-            74.610947,42.863556,0.000000
-            74.615837,42.863415,0.000000
-            74.617599,42.863556,0.000000
-            74.625900,42.865540,0.000000
-            74.628754,42.866199,0.000000
-            74.631371,42.866528,0.000000
-            74.636497,42.867111,0.000000
-            74.637146,42.875084,0.000000
-            74.636887,42.875916,0.000000
-            74.637657,42.877869,0.000000
-            74.637276,42.880241,0.000000
-            74.635468,42.888088,0.000000
-            74.634224,42.892456,0.000000
-            74.634163,42.894440,0.000000
-            74.633217,42.894440,0.000000
-            74.629974,42.895332,0.000000
-            74.628922,42.895191,0.000000
-            74.627319,42.894123,0.000000
-            74.626801,42.893745,0.000000
-            74.625748,42.893463,0.000000
-            74.624634,42.893543,0.000000
-            74.617828,42.894848,0.000000
-            74.611526,42.896057,0.000000
-            74.611717,42.875618,0.000000
-            74.610947,42.863556,0.000000
-          </coordinates>
-        </LinearRing>
-      </outerBoundaryIs>
-    </Polygon>
-  </Placemark>
   <Placemark>
     <name>9A</name>
     <description><![CDATA[]]></description>
@@ -376,7 +253,7 @@
   <Placemark>
     <name>9B</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style12</styleUrl>
+    <styleUrl>#style11</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -430,7 +307,7 @@
   <Placemark>
     <name>7B</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style23</styleUrl>
+    <styleUrl>#style18</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -454,40 +331,9 @@
     </Polygon>
   </Placemark>
   <Placemark>
-    <name>1</name>
-    <description><![CDATA[]]></description>
-    <styleUrl>#style14</styleUrl>
-    <Polygon>
-      <outerBoundaryIs>
-        <LinearRing>
-          <tessellate>1</tessellate>
-          <coordinates>
-            74.630516,42.835224,0.000000
-            74.619522,42.835751,0.000000
-            74.617928,42.837009,0.000000
-            74.608147,42.837608,0.000000
-            74.599998,42.838051,0.000000
-            74.599350,42.826191,0.000000
-            74.591026,42.810669,0.000000
-            74.589401,42.808529,0.000000
-            74.587769,42.805500,0.000000
-            74.587463,42.803360,0.000000
-            74.649261,42.800880,0.000000
-            74.645142,42.813221,0.000000
-            74.644890,42.815010,0.000000
-            74.643211,42.820740,0.000000
-            74.639351,42.832390,0.000000
-            74.638618,42.835251,0.000000
-            74.630516,42.835224,0.000000
-          </coordinates>
-        </LinearRing>
-      </outerBoundaryIs>
-    </Polygon>
-  </Placemark>
-  <Placemark>
     <name>1B</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style20</styleUrl>
+    <styleUrl>#style16</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -510,39 +356,9 @@
     </Polygon>
   </Placemark>
   <Placemark>
-    <name>14</name>
-    <description><![CDATA[]]></description>
-    <styleUrl>#style16</styleUrl>
-    <Polygon>
-      <outerBoundaryIs>
-        <LinearRing>
-          <tessellate>1</tessellate>
-          <coordinates>
-            74.599915,42.838150,0.000000
-            74.608154,42.837646,0.000000
-            74.610901,42.863510,0.000000
-            74.595711,42.863949,0.000000
-            74.587257,42.865177,0.000000
-            74.573135,42.867474,0.000000
-            74.571587,42.867474,0.000000
-            74.571625,42.867115,0.000000
-            74.572403,42.865963,0.000000
-            74.577255,42.859104,0.000000
-            74.580521,42.858097,0.000000
-            74.586655,42.856052,0.000000
-            74.592194,42.854733,0.000000
-            74.596184,42.850266,0.000000
-            74.599915,42.840668,0.000000
-            74.599915,42.838150,0.000000
-          </coordinates>
-        </LinearRing>
-      </outerBoundaryIs>
-    </Polygon>
-  </Placemark>
-  <Placemark>
     <name>12</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style15</styleUrl>
+    <styleUrl>#style13</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -624,7 +440,7 @@
   <Placemark>
     <name>3</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style10</styleUrl>
+    <styleUrl>#style9</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -650,40 +466,6 @@
             74.562920,42.867851,0.000000
             74.562988,42.867046,0.000000
             74.559105,42.866875,0.000000
-          </coordinates>
-        </LinearRing>
-      </outerBoundaryIs>
-    </Polygon>
-  </Placemark>
-  <Placemark>
-    <name>13</name>
-    <description><![CDATA[]]></description>
-    <styleUrl>#style17</styleUrl>
-    <Polygon>
-      <outerBoundaryIs>
-        <LinearRing>
-          <tessellate>1</tessellate>
-          <coordinates>
-            74.638618,42.835232,0.000000
-            74.630470,42.835220,0.000000
-            74.619522,42.835751,0.000000
-            74.617928,42.837040,0.000000
-            74.608109,42.837631,0.000000
-            74.610207,42.856960,0.000000
-            74.610847,42.863571,0.000000
-            74.615829,42.863411,0.000000
-            74.617592,42.863571,0.000000
-            74.628922,42.866241,0.000000
-            74.642609,42.867779,0.000000
-            74.659050,42.868099,0.000000
-            74.676170,42.867722,0.000000
-            74.675400,42.855801,0.000000
-            74.676262,42.855728,0.000000
-            74.674713,42.832180,0.000000
-            74.661598,42.834049,0.000000
-            74.653038,42.834309,0.000000
-            74.639351,42.832432,0.000000
-            74.638618,42.835232,0.000000
           </coordinates>
         </LinearRing>
       </outerBoundaryIs>
@@ -811,7 +593,7 @@
   <Placemark>
     <name>4</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style25</styleUrl>
+    <styleUrl>#style20</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -854,7 +636,7 @@
   <Placemark>
     <name>5</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style21</styleUrl>
+    <styleUrl>#style17</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -890,7 +672,7 @@
   <Placemark>
     <name>6</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style19</styleUrl>
+    <styleUrl>#style15</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -983,7 +765,7 @@
   <Placemark>
     <name>14B</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style11</styleUrl>
+    <styleUrl>#style10</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -1003,7 +785,7 @@
   <Placemark>
     <name>13B</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style18</styleUrl>
+    <styleUrl>#style14</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -1083,7 +865,7 @@
   <Placemark>
     <name>14A</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style24</styleUrl>
+    <styleUrl>#style19</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -1110,7 +892,7 @@
   <Placemark>
     <name>1A</name>
     <description><![CDATA[]]></description>
-    <styleUrl>#style13</styleUrl>
+    <styleUrl>#style12</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>

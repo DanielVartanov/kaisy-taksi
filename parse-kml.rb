@@ -6,12 +6,12 @@ require 'nokogiri'
 require_relative 'kaisy_taxi'
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
-ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'zones.db'
+ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'express-taxi.db'
 
 Zone.delete_all
 Vertex.delete_all
 
-filename = ARGV[0]
+filename = "./doc/express-taxi-zones.kml"
 
 # I don't know why Nokogiri::XML::ParseOptions::NOBLANKS does not work
 # in this  case (not well-formed KML file?). That's why have to do
