@@ -32,14 +32,15 @@ function drawRoute() {
     if (status == google.maps.DirectionsStatus.OK) {
       var leg = response.routes[0].legs[0];
       directionsDisplay.setDirections(response);
-      calculateRouteCost(leg.distance.value);
+      calculateRouteCost(leg.distance.value, route[0], route[1]);
     }
   });
 }
 
-function calculateRouteCost(distance) {
+function calculateRouteCost(distance, origin, destination) {
   var request = new XMLHttpRequest();
-  request.open("GET", distance / 1000, false);
+  url_string = "prices?distance=" + distance / 1000 + "&origin[lat]=" + origin.lat() + "&origin[lng]=" + origin.lng() + "&destination[lat]=" + destination.lat() + "&destination[lng]=" + destination.lng()
+  request.open("GET", url_string, false);
   request.send(null);
   alert(request.responseText);
   return distance;
