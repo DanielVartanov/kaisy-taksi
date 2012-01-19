@@ -34,7 +34,7 @@ KaisyTaxi.Map = function() {
       if (status == google.maps.DirectionsStatus.OK) {
         var leg = response.routes[0].legs[0];
         directionsDisplay.setDirections(response);
-        on_draw_route(leg.distance.value);
+        on_draw_route(leg.distance.value, leg.start_location, leg.end_location);
       }
     });
 
