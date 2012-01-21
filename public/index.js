@@ -39,7 +39,7 @@ function drawRoute() {
 
 function calculateRouteCost(distance, origin, destination) {
   var request = new XMLHttpRequest();
-  url_string = "prices?distance=" + distance / 1000 + "&origin[lat]=" + origin.lat() + "&origin[lng]=" + origin.lng() + "&destination[lat]=" + destination.lat() + "&destination[lng]=" + destination.lng()
+  url_string = "prices?distance=" + distance / 1000 + "&origin_lat=" + origin.lat() + "&origin_lng=" + origin.lng() + "&destination_lat=" + destination.lat() + "&destination_lng=" + destination.lng()
   request.open("GET", url_string, false);
   request.send(null);
   alert(request.responseText);
