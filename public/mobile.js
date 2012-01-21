@@ -6,11 +6,9 @@ $(document).ready(function() {
     var page = $('#list');
     $.getJSON("/prices",
       {
-        "distance": distance / 1000,
-        "origin_lat": origin.lat(),
-        "origin_lng": origin.lng(),
-        "destination_lat": destination.lat(),
-        "destination_lng": destination.lng()
+        distance: distance / 1000,
+        origin: {lat: origin.lat(), lng: origin.lng()},
+        destination: {lat: destination.lat(), lng: destination.lng() }
       },
       function(response) {
         $('#list :jqmData(role=content)').html('<ul data-role="listview" data-inset="true"></ul>');
