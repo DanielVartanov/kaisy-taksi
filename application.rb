@@ -7,6 +7,9 @@ require "logger"
 require "awesome_print"
 require "pp"
 require "geometry"
+require "rack/mobile-detect"
+
+use Rack::MobileDetect
 
 require_relative "kaisy_taxi"
 
@@ -18,7 +21,11 @@ ActiveRecord::Base.logger = Logger.new(STDOUT)
 ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'express-taxi.db', :pool => 25
 
 get '/' do
-  slim :index
+  unless env["X_MOBILE_DEVICE"].nil?
+    slim :mobile, :layout => false
+  else
+    slim :index
+  end
 end
 
 get '/mobile' do
