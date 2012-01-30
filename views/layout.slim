@@ -2,17 +2,16 @@ doctype 5
 html
   head
     title Сервис «Кайсы такси?». Показывает самую дешевую службу такси для выбранного маршрута.
-    meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     meta charset="utf-8"
-    css:
-      html, body, #map_canvas {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-    script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"
-    script type="text/javascript" src="map.js"
+    link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"
+    link rel="stylesheet" href="screen.css"
 
-  body onload="initialize()"
-    #map_canvas
+    script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"
+    script src="http://code.jquery.com/jquery-1.6.4.min.js"
+    script src="underscore.js"
+    script src="jm.js"
+    script src="maplib.js"
+    script src="desktop.js"
+
+  body
     == yield

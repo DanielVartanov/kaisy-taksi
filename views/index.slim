@@ -1,1 +1,18 @@
-script type="text/javascript" src="index.js"
+.topbar
+  .fill
+    .container
+      a.brand href="/" Kaisy taxi
+.container
+  .content
+    .row
+      .span10
+        #map
+      .span4
+        button#search.btn.success.large Кайсы такси?
+        table.bordered-table.zebra-striped#taxi_list
+          thead
+            tr
+              th #
+              th Такси
+              th Стоимость
+          tbody
