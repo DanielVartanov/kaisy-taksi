@@ -1,7 +1,24 @@
+# -*- coding: utf-8 -*-
 def alpha_price(distance)
   distance < 2 ?
     80 :
     80 + (distance - 2) * 10
+end
+
+def udacha_price(distance)
+  alpha_price(distance)
+end
+
+def supertaxi_price(distance)
+  distance < 1 ?
+    60 :
+    60 + (distance - 1) * 10
+end
+
+def namba_price(distance)
+  distance < 1 ?
+    50 :
+    50 + (distance - 1) * 10
 end
 
 def express_price(origin, destination)
@@ -21,7 +38,10 @@ end
 
 def prices(distance, origin, destination)
   {
-    :alpha => alpha_price(distance),
-    :express => express_price(origin, destination)
+    'Альфа такси' => alpha_price(distance),
+    'Express Taxi' => express_price(origin, destination),
+    'Удача' => udacha_price(distance),
+    'Супер такси' => supertaxi_price(distance),
+    'Намба такси' => namba_price(distance)
   }
 end
