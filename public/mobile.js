@@ -11,26 +11,31 @@ $(document).ready(function() {
         destination: {lat: destination.lat(), lng: destination.lng() }
       },
       function(response) {
-        $('#list :jqmData(role=content)').html('<ul data-role="listview" data-inset="true"></ul>');
-        _(response).each(function(sum, taxi) {
-            var elem = $("<li></li>");
-            elem.text(taxi + ": " + sum);
-            $('#list :jqmData(role=content) ul').append(elem);
-        });
-        $('#list').find( ":jqmData(role=listview)" ).listview();
+        $('#list :jqmData(role=content) ul').html(
+          jm.render(function(b) {
+            _(response).each(function(info, taxi) {
+              b.li(function() {
+                b.a({"href": "tel:" + info["tel"]}, function() {
+                  b.h4(function() {
+                    b.text( taxi + " " + info["display_tel"] );
+                  });
+                  b.text( Math.floor(info["price"]) + " сом" );
+                });
+              });
+            });
+          })
+        );
+        $('#list').find( ":jqmData(role=listview)" ).listview("destroy").listview();
       }
     );
   }
 
-  // When ready...
+  // for iOS
   window.addEventListener("load",function() {
-    // Set a timeout...
     setTimeout(function(){
-      // Hide the address bar!
       window.scrollTo(0, 1);
     }, 0);
   });
-
 
   $('#search').click(function(e) {
     if (!distance) {
@@ -66,5 +71,4 @@ $(document).ready(function() {
     origin = origin_from_map;
     destination = destination_from_map;
   });
-
 });

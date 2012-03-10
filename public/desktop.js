@@ -26,15 +26,22 @@ $(document).ready(function() {
           destination: {lat: destination.lat(), lng: destination.lng() }
         },
         function(response) {
+          var tel = "156";
           $('#taxi_list tbody').html(
             jm.render(function(b) {
               var i = 0
-              _(response).each(function(sum, taxi) {
+              _(response).each(function(info, taxi) {
                 i++;
                 b.tr(function() {
                   b.td(function() { b.text(i) });
-                  b.td(function() { b.text(taxi) });
-                  b.td(function() { b.text(Math.floor(sum)) });
+                  b.td(function() {
+                    b.h5(function() { b.text(taxi) });
+                    b.a(
+                      {href: "tel:" + info["tel"]},
+                      function() { b.text(info["display_tel"]) }
+                    );
+                  });
+                  b.td(function() { b.text(Math.floor(info["price"])) });
                 });
               })
             })
