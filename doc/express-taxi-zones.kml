@@ -5,11 +5,11 @@
   <description><![CDATA[]]></description>
   <Style id="style16">
     <LineStyle>
-      <color>BF0000CC</color>
+      <color>BFFF6633</color>
       <width>4</width>
     </LineStyle>
     <PolyStyle>
-      <color>330000CC</color>
+      <color>33FF6633</color>
       <fill>1</fill>
       <outline>1</outline>
     </PolyStyle>
@@ -345,7 +345,7 @@
     </PolyStyle>
   </Style>
   <Placemark>
-    <name>12</name>
+    <name>12A</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style16</styleUrl>
     <Polygon>
