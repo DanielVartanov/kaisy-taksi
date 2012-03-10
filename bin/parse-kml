@@ -3,7 +3,8 @@
 require 'active_record'
 require 'logger'
 require 'nokogiri'
-require_relative 'kaisy_taxi'
+
+require './kaisy_taxi'
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'express-taxi.db'
@@ -33,6 +34,5 @@ placemarks.each do |placemark|
   points.each do |point|
     latlng = point.split(',')
     vertex = Vertex.create! :lat => latlng[1], :lng => latlng[0], :zone => zone
-    puts vertex.inspect
   end
 end

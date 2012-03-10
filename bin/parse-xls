@@ -4,8 +4,7 @@
 require "roo"
 require "active_record"
 require "logger"
-
-require_relative "kaisy_taxi"
+require "./kaisy_taxi"
 
 ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => 'express-taxi.db', :pool => 25
 
