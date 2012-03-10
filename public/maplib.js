@@ -9,7 +9,19 @@ KaisyTaxi.Map = function() {
 
   function add_point(point) {
 
-    var marker = new google.maps.Marker({ position: point, map: map });
+    var marker = new google.maps.Marker({
+      position: point,
+      map: map,
+      draggable: true,
+      bouncy: true
+    });
+
+    google.maps.event.addListener(marker, 'dragend', function() {
+      if (route.length == 2) {
+        draw_route();
+      }
+    });
+
     route.push(marker);
 
     if (route.length == 3) {

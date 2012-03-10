@@ -5,3 +5,7 @@ body {
 #map {
   min-height: 300px;
 }
+
+#map img {
+    max-width: inherit;
+}
