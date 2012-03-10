@@ -21,6 +21,12 @@ def namba_price(distance)
     50 + (distance - 1) * 10
 end
 
+def argo_price(distance)
+  distance < 2 ?
+    70 :
+    70 + (distance - 1) * 10
+end
+
 def express_price(origin, destination)
   zones = Zone.all
   
@@ -42,6 +48,7 @@ def prices(distance, origin, destination)
     'Express Taxi' => { :price => express_price(origin, destination), :tel => '156', :display_tel => '156' },
     'Удача' => { :price => udacha_price(distance), :tel => '154', :display_tel => '154' },
     'Супер такси' => { :price => supertaxi_price(distance), :tel => '152', :display_tel => '152' },
-    'Намба такси' => { :price => namba_price(distance), :tel => '0312976000', :display_tel => '976000' }
+    'Намба такси' => { :price => namba_price(distance), :tel => '0312976000', :display_tel => '976000' },
+    'Арго' => { :price => argo_price(distance), :tel => '178', :display_tel => '178' }
   }
 end
