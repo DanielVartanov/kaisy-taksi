@@ -5,18 +5,18 @@ def alpha_price(distance)
 end
 
 def express_price(origin, destination)
-  zones = Zone.all(:include => :vertices)
-
+  zones = Zone.all
+  
   origin_zone = zones.find { |zone|
     zone.to_polygon.contains?(origin)
   }
-
+  
   destination_zone = zones.find { |zone|
     zone.to_polygon.contains?(destination)
   }
-
+  
   puts "Price.from(#{origin_zone.name}).to(#{destination_zone.name})"
-  Price.between(origin_zone, destination_zone).value
+  Price.between(origin_zone.name, destination_zone.name).value
 end
 
 def prices(distance, origin, destination)

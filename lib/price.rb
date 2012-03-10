@@ -1,8 +1,8 @@
-class Price < ActiveRecord::Base
-  belongs_to :from, :class_name => "Zone"
-  belongs_to :to, :class_name => "Zone"
+class Price < Struct.new(:value)
+  extend YamlStorage
+  yaml_storage 'data/prices.yml'
 
   def self.between(from, to)
-    where(:from_id => from.id, :to_id => to.id).first
+    new(yaml[from][to])
   end
 end

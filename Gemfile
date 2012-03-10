@@ -2,8 +2,7 @@ source :rubygems
 
 gem "sinatra"
 gem "slim"
-gem "activerecord"
-gem "sqlite3"
+gem "active_support"
 gem "ruby-geometry", :require => "geometry"
 gem "roo"
 gem "nokogiri"
