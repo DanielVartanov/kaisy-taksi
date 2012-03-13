@@ -44,8 +44,8 @@ end
 
 def prices(distance, origin, destination)
   {
-    'Альфа такси' => { :price => alpha_price(distance), :tel => '0312579999', :display_tel => '579999' },
     'Express Taxi' => { :price => express_price(origin, destination), :tel => '156', :display_tel => '156' },
+    'Альфа такси' => { :price => alpha_price(distance), :tel => '0312579999', :display_tel => '579999' },
     'Удача' => { :price => udacha_price(distance), :tel => '154', :display_tel => '154' },
     'Супер такси' => { :price => supertaxi_price(distance), :tel => '152', :display_tel => '152' },
     'Намба такси' => { :price => namba_price(distance), :tel => '0312976000', :display_tel => '976000' },
