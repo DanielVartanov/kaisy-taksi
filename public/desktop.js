@@ -2,7 +2,7 @@ $(document).ready(function() {
   var distance, origin, destination;
   var kaisy_taxi_map = KaisyTaxi.Map();
 
-  $('#remove_route').click(function() {
+  $('#clear-route').click(function() {
     kaisy_taxi_map.remove_route();
     distance = false;
   });

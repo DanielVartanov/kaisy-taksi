@@ -100,6 +100,8 @@ KaisyTaxi.Map = function() {
       _(route).each(function(marker) {
         marker.setMap(null);
       });
+      map.setZoom(13);
+      current_location(map);
       directionsDisplay.setMap(null);
       route = [];
     }
