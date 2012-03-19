@@ -83,7 +83,9 @@ KaisyTaxi.Map = function() {
       var myOptions = {
         zoom: 13,
         center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        panControl: false,
+        streetViewControl: false
       };
       map = new google.maps.Map(container, myOptions);
       current_location(map);
