@@ -6,6 +6,7 @@ require "pp"
 require "yaml"
 require "geometry"
 require "rack/mobile-detect"
+require 'active_support/core_ext/object/blank'
 
 use Rack::MobileDetect
 

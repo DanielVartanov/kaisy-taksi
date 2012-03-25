@@ -38,8 +38,8 @@ def express_price(origin, destination)
     zone.to_polygon.contains?(destination)
   }
   
-  puts "Price.from(#{origin_zone.name}).to(#{destination_zone.name})"
-  Price.between(origin_zone.name, destination_zone.name).value
+  
+  Price.between(origin_zone.name, destination_zone.name).value if origin_zone.present? and destination_zone.present?
 end
 
 def prices(distance, origin, destination)
