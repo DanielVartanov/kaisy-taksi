@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 def alpha_price(distance)
-  distance < 2 ?
-    80 :
-    80 + (distance - 2) * 10
+  distance < 3 ?
+    70 :
+    70 + (distance - 3) * 10
 end
 
 def udacha_price(distance)
-  alpha_price(distance)
+  distance < 2 ?
+    80 :
+    80 + (distance - 2) * 10
 end
 
 def supertaxi_price(distance)
@@ -37,7 +39,6 @@ def express_price(origin, destination)
   destination_zone = zones.find { |zone|
     zone.to_polygon.contains?(destination)
   }
-  
   
   Price.between(origin_zone.name, destination_zone.name).value if origin_zone.present? and destination_zone.present?
 end
