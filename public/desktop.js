@@ -2,9 +2,10 @@ $(document).ready(function() {
   var distance, origin, destination;
   var kaisy_taxi_map = KaisyTaxi.Map();
 
-  $('#remove_route').click(function() {
+  $('#clear-route').click(function() {
     kaisy_taxi_map.remove_route();
     distance = false;
+    $('#taxi_list tbody').html('');
   });
 
   $(window).resize(function() {
@@ -29,11 +30,8 @@ $(document).ready(function() {
           var tel = "156";
           $('#taxi_list tbody').html(
             jm.render(function(b) {
-              var i = 0
               _(response).each(function(info, taxi) {
-                i++;
                 b.tr(function() {
-                  b.td(function() { b.text(i) });
                   b.td(function() {
                     b.h5(function() { b.text(taxi) });
                     b.a(
