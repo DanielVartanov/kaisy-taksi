@@ -25,6 +25,17 @@ html
       })();
         
   body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          a.brand href="/" Один клик по карте проложит маршрут и покажет его стоимость во всех службах такси.
+          .nav-collapse.pull-right
+            ul.nav
+              li#twitter_button 
+                a.twitter-mention-button href="https://twitter.com/share?screen_name=daniel_vartanov" data-text="Привет, у вас тут на сайте..." data-count="none" data-size="small" data-hashtags="ktx" data-show-screen-name="false" data-lang="en"
+                javascript:
+                  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+              
     == yield
 
     
