@@ -13,7 +13,7 @@ use Rack::MobileDetect
 require_relative "kaisy_taxi"
 
 set :public_folder, File.dirname(__FILE__) + '/public'
-Slim::Engine.set_default_options :pretty => true
+Slim::Engine.set_default_options pretty: true, encoding: "utf-8"
 Slim::Engine.default_options[:disable_escape] = true
 
 get '/' do

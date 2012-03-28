@@ -9,3 +9,7 @@ body {
 #map img {
     max-width: inherit;
 }
+
+li#twitter_button {
+  margin-top: 8px;
+}
