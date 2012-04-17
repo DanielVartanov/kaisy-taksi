@@ -1,35 +1,41 @@
 # -*- coding: utf-8 -*-
-def alpha_price(distance)
+
+def альфа(distance)
   distance < 3 ?
     70 :
     70 + (distance - 3) * 10
 end
 
-def udacha_price(distance)
+def удача(distance)
   distance < 2 ?
     80 :
-    80 + (distance - 2) * 10
+    80 +
+    (distance - 2) * 10
 end
 
-def supertaxi_price(distance)
+def super_taxi(distance)
   distance < 1 ?
     60 :
     60 + (distance - 1) * 10
 end
 
-def namba_price(distance)
+def намба(distance)
   distance < 1 ?
     50 :
     50 + (distance - 1) * 10
 end
 
-def argo_price(distance)
+def арго(distance)
   distance < 2 ?
-    70 :
-    70 + (distance - 1) * 10
+    60 :
+    60 + (distance - 2) * 10
 end
 
-def express_price(origin, destination)
+def телепорт(distance)
+  45 + distance * 10
+end
+
+def express(origin, destination)
   zones = Zone.all
   
   origin_zone = zones.find { |zone|
@@ -39,17 +45,18 @@ def express_price(origin, destination)
   destination_zone = zones.find { |zone|
     zone.to_polygon.contains?(destination)
   }
-  
+
   Price.between(origin_zone.name, destination_zone.name).value if origin_zone.present? and destination_zone.present?
 end
 
 def prices(distance, origin, destination)
   {
-    'Express Taxi' => { :price => express_price(origin, destination), :tel => '156', :display_tel => '156' },
-    'Альфа такси' => { :price => alpha_price(distance), :tel => '0312579999', :display_tel => '579999' },
-    'Удача' => { :price => udacha_price(distance), :tel => '154', :display_tel => '154' },
-    'Супер такси' => { :price => supertaxi_price(distance), :tel => '152', :display_tel => '152' },
-    'Намба такси' => { :price => namba_price(distance), :tel => '0312976000', :display_tel => '976000' },
-    'Арго' => { :price => argo_price(distance), :tel => '178', :display_tel => '178' }
+    'Express Taxi' => { :price => express(origin, destination), :tel => '156', :display_tel => '156' },
+    'Альфа такси' => { :price => альфа(distance), :tel => '0312579999', :display_tel => '579999' },
+    'Удача' => { :price => удача(distance), :tel => '154', :display_tel => '154' },
+    'Супер такси' => { :price => super_taxi(distance), :tel => '152', :display_tel => '152' },
+    'Намба такси' => { :price => намба(distance), :tel => '0312976000', :display_tel => '976000' },
+    'Арго' => { :price => арго(distance), :tel => '178', :display_tel => '178' },
+    'Телепорт' => { :price => телепорт(distance), :tel => '1336', :display_tel => '1336' }
   }
 end
